@@ -1,0 +1,10 @@
+@charset 'UTF-8';
+
+body{
+  /*background-image: url(./imagens/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; ***Rapaz, eu coloquei height, pórem no vídeo o cara usou top center ali em cima.***
+  background-size: cover;*/
+  background:  url(imagens/bg-mobile.jpg) no-repeat top center/cover;
+}
