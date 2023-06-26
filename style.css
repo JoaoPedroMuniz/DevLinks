@@ -14,15 +14,17 @@
   --surface-color:rgba(255, 255, 255, 0.05);
   --surface-color-hover:rgba(255, 255, 255, 0.05);
   --highlight-color:rgba(255, 255, 255, 0.2);
+  --switch-bg-url:url(./imagens/MoonStars.svg)
 }
 
 .light{
   --text-color: black;
-  --bg-url:url(imagens/bg-mobile-light.jpg);
+  --bg-url:url('imagens/bg-mobile-light.jpg');
   --stroke-color:rgba(0, 0, 0, 0.5);
   --surface-color:rgba(0, 0, 0, 0.05);
   --surface-color-hover:rgba(0, 0, 0, 0.05);
   --highlight-color:rgba(0, 0, 0, 0.1);
+  --switch-bg-url:url(./imagens/sun.svg)
 }
 
 body{
@@ -45,6 +47,8 @@ main#container{
   padding: 0px 24px;
 }
   
+/*Profile*/
+
 div#profile > img{
   display: block;
   width: 112px; /*Height opcional*/
@@ -67,6 +71,45 @@ div#profile > a:hover{
   text-decoration: underline;
 }
 
+/*Switch*/
+
+#switch{
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button{
+  height: 32px;
+  width: 32px;
+  background:white var(--switch-bg-url) no-repeat center;
+  border-radius: 50%;
+  border: 0;
+
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.light #switch button{
+  right: 0;
+  left: initial; /*Confg do left inicial, obrigatório para mudanças de acordo com o projeto.*/
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
 /*Links*/
 ul{
   padding: 24px;
@@ -79,7 +122,7 @@ ul{
 ul li a{
   display: flex;
   justify-content: center; /*Centralizar o contéudo*/
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   background-color: var(--surface-color);
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
